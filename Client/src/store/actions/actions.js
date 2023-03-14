@@ -86,3 +86,27 @@ export const remove_db_posts = () => {
     type: ACTION_TYPES.REMOVE_DB_POSTS
   }
 }
+
+export const setEmail = () => {
+  return {
+    type: ACTION_TYPES.SET_EMAIL
+  }
+}
+export const setPassword = () => {
+  return {
+    type: ACTION_TYPES.SET_PASSWORD
+  }
+}
+
+export const registerUser = ({email, password}) => {
+  return {
+    type: ACTION_TYPES.REGISTER_USER
+  }
+}
+
+export const loginUser = (user) => {
+  return {
+    type: ACTION_TYPES.LOGIN_USER,
+    payload: user
+  }
+}

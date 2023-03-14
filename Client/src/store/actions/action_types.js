@@ -22,3 +22,11 @@ export const REMOVE_DB_PROFILE = "REMOVE_DB_PROFILE"
 export const FETCH_DB_POSTS = "FETCH_DB_POSTS"
 
 export const REMOVE_DB_POSTS = "REMOVE_DB_POSTS"
+
+export const SET_EMAIL = "SET_EMAIL"
+export const SET_PASSWORD = "SET_PASSWORD"
+export const REGISTER_USER = "REGISTER_USER"
+
+export const LOGOUT_USER = "LOGOUT_USER"
+
+export const LOGIN_USER = "LOGIN_USER"

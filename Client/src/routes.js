@@ -14,6 +14,8 @@ import PrivateComponent from './hooks/privatecomponent';
 import SignUp from './hooks/signup';
 
 
+import Login from './auth/login';
+
 import Profile from './Profile/profile';
 import ShowUser from './Profile/showuser';
 import SendMessage from './Profile/sendmessage';
@@ -54,6 +56,7 @@ const Routes = () => {
               <Route path='/hookscontainer' component={HooksContainer1} />
               <Route path='/authcheck' component={AuthCheck} />
               <Route path='/signup' component={SignUp} />
+              <Route path='/login' component={Login} />
 
               <Route path='/posts' component={Posts} />
               <Route path='/post/:pid' component={ShowPost} />

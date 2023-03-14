@@ -13,7 +13,7 @@ export default class Auth {
   userProfile = {}
 
   login = () => {
-      this.auth0.authorize()
+    setTimeout(() => { history.replace('/login') }, 200);
   }
 
   handleAuth = () => {

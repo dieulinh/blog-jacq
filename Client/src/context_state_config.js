@@ -42,8 +42,8 @@ const ContextState = (props) => {
                                                                AuthReducer.initialState)
 
 
-    const handleLogin = () => {
-      dispatchAuthReducer(ACTIONS.login_success())
+    const handleLogin = (user) => {
+      dispatchAuthReducer(ACTIONS.loginUser(user))
     }
 
     const handleLogout = () => {
@@ -130,7 +130,7 @@ const ContextState = (props) => {
             handleRemoveDBProfile: () => handleRemoveDBProfile(),
             handleUserAddProfile: (profile) => handleAddProfile(profile),
             handleUserRemoveProfile: () => handleRemoveProfile(),
-            handleUserLogin: () => handleLogin(),
+            handleUserLogin: (user) => handleLogin(user),
             handleUserLogout: () => handleLogout(),
 
             //Form Reducer
