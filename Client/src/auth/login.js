@@ -18,16 +18,26 @@ export default function SignUp () {
   }
  const handleSubmit = e => {
     e.preventDefault();
-    axios.post('/api/login', {email,password})
+    axios.post('http://localhost:5000/api/login', {email,password})
       .then((response) => {
-        console.log(response);
-        console.log('resgister successfully')
-        context.handleUserLogin(response.data.user)
+        console.log(response)
+        if(response.data.user&&response.status==201)
+          {
+            console.log("Success ")
+            context.handleUserLogin(response.data.user)
+            setTimeout(() => history.replace('/'), 700)
+          } else {
+          context.handleUserLogout()
+          setTimeout(() => history.replace('/login'), 700)
+        }
+
+
       })
       .catch((err) => {
-          console.log(err)
+        context.handleUserLogout()
+        console.log(err)
       })
-      .then(setTimeout(() => history.replace('/'), 700) )
+
 
   }
 
@@ -37,7 +47,7 @@ export default function SignUp () {
       <form onSubmit={handleSubmit}>
 
         <label>
-          Emaiil
+          Email
           <div>
             <input
               id="email"
@@ -49,13 +59,15 @@ export default function SignUp () {
         </label>
         <label>
           Password
+          <div>
           <input
             id="password" type="password"
 
             onChange={(e) => handlePasswordChange(e)} />
+          </div>
         </label>
         <button type="submit" className="primary">
-          Sign Up
+          Login
         </button>
       </form>
     </section>
